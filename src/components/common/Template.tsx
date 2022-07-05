@@ -6,7 +6,7 @@ type TemplateProps = {
   children: ReactNode
 }
 
-const Template: FunctionComponent<TemplateProps> = function ({ children }) {
+const Template: FunctionComponent<TemplateProps> = ({ children }) => {
   return (
     <div>
       <Header />

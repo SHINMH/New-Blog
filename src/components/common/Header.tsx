@@ -33,26 +33,27 @@ const LinkWrapper = styled.div`
   gap: 0.5rem;
 
   a {
+    color: white;
     padding: 12px;
   }
 `
 
-const Header: FunctionComponent = function () {
+const Header: FunctionComponent = () => {
   return (
     <HeaderWrapper>
       <NavWrapper>
         <Link href="/">
           <a>
-            <Image src={'/img/logo.png'} width={40} height={40} />
+            <Image src={'/img/logo.png'} width={40} height={40} alt="Logo" />
           </a>
         </Link>
 
         <LinkWrapper>
           <Link href="/about">
-            <a>About</a>
+            <a>ABOUT</a>
           </Link>
           <Link href="/post">
-            <a>Posts</a>
+            <a>POSTS</a>
           </Link>
         </LinkWrapper>
       </NavWrapper>

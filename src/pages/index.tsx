@@ -5,18 +5,24 @@ import styles from '@styles/Home.module.css'
 import styled from '@emotion/styled'
 import Header from '@components/common/Header'
 import Footer from '@components/common/Footer'
+import type { NextPageWithLayout } from './_app'
+import { ReactElement } from 'react'
 
 const Content = styled.div`
   height: 1000px;
   margin-top: 100px;
 `
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
+  return <p>dsahfjkashdfkjasdhfkj</p>
+}
+
+Home.getLayout = function getLayout(page: ReactElement) {
   return (
     <div className={styles.container}>
       <Header />
       <div>
-        <Content>1231</Content>
+        <Content>{page}</Content>
       </div>
       <Footer />
     </div>
