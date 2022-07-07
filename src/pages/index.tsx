@@ -7,26 +7,36 @@ import Header from '@components/common/Header'
 import Footer from '@components/common/Footer'
 import type { NextPageWithLayout } from './_app'
 import { ReactElement } from 'react'
+import { getAllPosts } from 'src/util/mdUtil'
+import PostList from '@components/main/PostList'
 
 const Content = styled.div`
   height: 1000px;
-  margin-top: 100px;
 `
 
-const Home: NextPageWithLayout = () => {
-  return <p>dsahfjkashdfkjasdhfkj</p>
+const Home: NextPageWithLayout = props => {
+  console.log(props)
+  return (
+    <Content>
+      <PostList posts={props} />
+    </Content>
+  )
 }
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
     <div className={styles.container}>
       <Header />
-      <div>
-        <Content>{page}</Content>
-      </div>
+      {page}
       <Footer />
     </div>
   )
 }
 
 export default Home
+
+export async function getStaticProps() {
+  const posts = getAllPosts()
+
+  return { props: { posts } }
+}

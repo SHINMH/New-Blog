@@ -38,6 +38,11 @@ const LinkWrapper = styled.div`
   }
 `
 
+const navLinks: { title: string; link: string }[] = [
+  { title: 'ABOUT', link: '/' },
+  { title: 'POSTS', link: '/post' },
+]
+
 const Header: FunctionComponent = () => {
   return (
     <HeaderWrapper>
@@ -47,14 +52,12 @@ const Header: FunctionComponent = () => {
             <Image src={'/img/logo.png'} width={40} height={40} alt="Logo" />
           </a>
         </Link>
-
         <LinkWrapper>
-          <Link href="/about">
-            <a>ABOUT</a>
-          </Link>
-          <Link href="/post">
-            <a>POSTS</a>
-          </Link>
+          {navLinks.map((nav, index) => (
+            <Link key={index} href={nav.link}>
+              <a>{nav.title}</a>
+            </Link>
+          ))}
         </LinkWrapper>
       </NavWrapper>
     </HeaderWrapper>
