@@ -49,7 +49,7 @@ const Header: FunctionComponent = () => {
       <NavWrapper>
         <Link href="/">
           <a>
-            <Image src={'/img/logo.png'} width={40} height={40} alt="Logo" />
+            <Image src={'/img/logo.png'} width={200} height={50} alt="Logo" />
           </a>
         </Link>
         <LinkWrapper>
